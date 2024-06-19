@@ -22,7 +22,6 @@ run_flu_models = function( params=NULL , data=NULL ){
     df_i = 1
     
     start_time <- Sys.time()
-    
     for (country_short_input_i in country_short_input_v) { # country_short_input_i = country_short_input_v[1]
       
       pop_country = data$demography$population_pyramid %>% 
@@ -30,7 +29,7 @@ run_flu_models = function( params=NULL , data=NULL ){
       if (country_short_input_i=="GR") pop_country = 10.43*1e6
       
       start_year = dat %>% filter(country_short==country_short_input_i) %>% pull(date) %>% min() %>% year() %>% as.numeric()
-      while(start_year<=2022) {
+      while(start_year<=2023) {
         season = paste0(start_year,"/",start_year+1)
         start_date = ymd(paste0(start_year,"-07-01"))
         end_date = ymd(paste0(start_year+1,"-05-01"))
@@ -55,7 +54,7 @@ run_flu_models = function( params=NULL , data=NULL ){
     end_time <- Sys.time()
     (end_time - start_time) # 1.6 hours
     
-    df_collect %>% bind_rows -> x
+    df_collect %>% bind_rows() -> x
     if (params$debug==F) write_csv(x,file="output/rt_season_country.csv")
   }
   

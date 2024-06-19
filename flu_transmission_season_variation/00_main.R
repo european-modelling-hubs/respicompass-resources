@@ -1,6 +1,6 @@
 # ---- |-Set working directory ----
 # user to set the path where the 00_main.R script is stored
-path_of_00_main_file = "~/R modelling/Flu-modelling/code/05_code_public/season_variance_transmission"
+path_of_00_main_file = "~/R modelling/respicompass-resources/flu_transmission_season_variation"
 # working directory is set to the folder containing 00_main.R 
 setwd(path_of_00_main_file)
 

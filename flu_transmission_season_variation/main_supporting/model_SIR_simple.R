@@ -62,7 +62,7 @@ model_SIR_simple_r0 = function( params=NULL, all_season=NULL, target_input=NULL,
     fit02=rstan::stan(
       file="stan/SIR_simple_nas_freebeta.stan",
       #chains=1 ,thin=1,iter=300, # good for testing model
-      chains=14 ,thin=7,iter=560,
+      chains=14 ,thin=7,iter=400,
       seed=12, cores = getOption("mc.cores", 1L),
       control=list(
         #adapt_delta=0.9,

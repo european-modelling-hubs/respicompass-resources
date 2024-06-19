@@ -1,7 +1,7 @@
 settings = function() {
   params = list()
   
-  params$debug = TRUE # if true, scripts can be tested very fast
+  params$debug = F # if true, scripts can be tested very fast
   # ---- |-Names/identifiers ----
   params$scenario_round_id = "2024_2025_1_FLU1"
   params$scenario_team = "ECDC"
